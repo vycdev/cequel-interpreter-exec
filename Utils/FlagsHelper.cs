@@ -24,13 +24,19 @@ namespace Interpreter_exec.Utils
                     case "--input":
                         InputFile = args[++i];
                         if(InputFile.Contains("\"") || InputFile.Contains("'"))
-                            throw new ArgumentException("Invalid input file name");
+                        {
+                            Console.WriteLine("Invalid input file name");
+                            Environment.Exit(1);
+                        }
                         break;
                     case "-o":
                     case "--output":
                         OutputFile = args[++i];
                         if (OutputFile.Contains("\"") || OutputFile.Contains("'"))
-                            throw new ArgumentException("Invalid output file name");
+                        {
+                            Console.WriteLine("Invalid output file name");
+                            Environment.Exit(1);
+                        }
                         break;
                     case "-v":
                     case "--verbose":

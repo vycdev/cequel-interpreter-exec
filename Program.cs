@@ -28,7 +28,10 @@ namespace Interpreter_exec
 
             // Check if input file exists
             if (!File.Exists(flags.InputFile))
-                throw new FileNotFoundException("Input file not found");
+            {
+                Console.WriteLine($"Input file \"{flags.InputFile}\" not found.");
+                Environment.Exit(1);
+            }
 
             if (!File.Exists(flags.OutputFile))
                 File.Create(flags.OutputFile);
