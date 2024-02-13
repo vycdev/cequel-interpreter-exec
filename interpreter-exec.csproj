@@ -6,6 +6,17 @@
     <RootNamespace>interpreter_exec</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>ceq</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\interpreter-lib\Interpreter-lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="help.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
