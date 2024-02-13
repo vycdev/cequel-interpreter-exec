@@ -100,3 +100,9 @@ scrie cnt
 "acesta este un string" // valid
 "acesta este un alt string' // valid
 'acesta este inca un string" // valid 
+
+scrie pana cand
+
+citeste n 
+
+scrie pana cand executa
