@@ -10,11 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\interpreter-lib\Interpreter-lib.csproj" />
+    <ProjectReference Include="..\interpreter-lib\Interpreter_lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="help.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestFiles\tokenizerTest.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
