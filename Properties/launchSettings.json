@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "interpreter-exec": {
+      "commandName": "Project",
+      "commandLineArgs": "-i input.txt\r\n-o output.txt\r\n-v \r\n-d"
+    }
+  }
+}
