@@ -1,7 +1,6 @@
 ﻿using interpreter_exec.Utils;
 using Interpreter_exec.Utils;
 using Interpreter_lib.Tokenizer;
-using Interpreter_lib.Utils;
 
 namespace Interpreter_exec
 {
@@ -44,7 +43,7 @@ namespace Interpreter_exec
             inputReader.Close();
 
             // Tokenize 
-            Tokenizer tokenizer = new(code, Languages.romanian);
+            Tokenizer tokenizer = new(code, flags.Language);
 
             if (flags.Debug)
             {

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interpreter_lib.Utils;
+using Interpreter_lib.Tokenizer;
 
 namespace Interpreter_exec.Utils
 {
@@ -13,6 +15,7 @@ namespace Interpreter_exec.Utils
         public bool Verbose { get; set; }
         public bool Debug { get; set; }
         public bool Help { get; set; }
+        public TokensLanguage Language { get; set; } = Languages.romanian;
  
         public FlagsHelper(string[] args) 
         {
@@ -50,6 +53,13 @@ namespace Interpreter_exec.Utils
                     case "-?":
                     case "--help":
                         Help = true;
+                        break;
+                    case "-l":
+                    case "--language":
+                        if (args[++i] == "en")
+                            Language = Languages.english;
+                        if (args[i] == "ro")
+                            Language = Languages.romanian;
                         break;
                     default:
                         break;

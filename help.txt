@@ -15,6 +15,7 @@ Flags:
   -o, --output string       output file (if you want to save the results)
   -v, --verbose             verbose mode
   -d, --debug               debug mode
+  -l, --language string     language: en, ro (default "ro")
    
 Example:
   ./ceq.exe -i input.ceq -o output.txt -v
