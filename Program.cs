@@ -1,5 +1,7 @@
-﻿using Interpreter_exec.Utils;
+﻿using interpreter_exec.Utils;
+using Interpreter_exec.Utils;
 using Interpreter_lib.Tokenizer;
+using Interpreter_lib.Utils;
 
 namespace Interpreter_exec
 {
@@ -42,13 +44,25 @@ namespace Interpreter_exec
             inputReader.Close();
 
             // Tokenize 
-            Tokenizer tokenizer = new(code);
+            Tokenizer tokenizer = new(code, Languages.romanian);
 
-            if(flags.Debug)
+            if (flags.Debug)
+            {
+                Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "Type", "Value"));
+                Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------", "------------------------------"));
                 foreach (Token token in tokenizer.Tokens)
                 {
-                    Console.WriteLine(token.Type + " " + token.Value);
+                    if(token.Value.Length > 30)
+                    {
+                        var lines = token.Value.SplitInParts(30);
+                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, lines.First()));
+                        foreach (string line in lines.Skip(1))
+                            Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "", line));
+                    }
+                    else
+                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, token.Value));
                 }
+            }
 
         }
     }

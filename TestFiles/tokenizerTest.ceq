@@ -12,6 +12,14 @@ scrie "a + b = ", a + b, "\n"
 
 a <- 5
 b <- a + 3
+c <- a * b
+d <- 5.2
+e <- .1234
+f <- 01
+g <- 01.34
+h <- 0.1234.2234 // This should be invalid and will be saved as an indentifier token 
+
+"string \" '' \n \r\n and other stuff \0 \\\" lol"
 
 // Se folosesc taburi pentru determinarea instructiunilor (editorul va avea inserat automat acele linii si patrate in functie de taburi) 
 
@@ -30,7 +38,7 @@ daca <conditie> atunci
 
 // Structuri repetitive 
 
-pentru <variabila> ← <expresie initiala>, <expresie finala> , <pas> executa
+pentru <variabila> <- <expresie initiala>, <expresie finala> , <pas> executa
     <instructiuni>
 
 
@@ -40,10 +48,10 @@ pentru <variabila> ← <expresie initiala>, <expresie finala> , <pas> executa
 
 // Dacă pas = 1 și expresie initiala > expresie finala>, secvența instructiuni nu se va executa deloc. La fel se întâmplă când <pas = -1 și expresie initiala < expresie finala. În caz contrar numărul de pași este expresie initială - expresie finala + 1, dacă <pas = 1, respectiv expresie finală - expresie initiala + 1, dacă pas=-1.
 
-S ← 0; P ← 1
-pentru i←1,n executa
-    S ← S + i
-    P ← P * i
+S <- 0; P <- 1
+pentru i<-1,n executa
+    S <- S + i
+    P <- P * i
 
 scrie S, ' ' , P
 
@@ -54,10 +62,10 @@ cat timp <conditie> executa
 
 
 citeste n
-S ← 0
-cat timp n ≠ 0 executa
-    S ← S + n % 10
-    n ← [n/10]
+S <- 0
+cat timp n != 0 executa
+    S <- S + n % 10
+    n <- [n/10]
  
 scrie S
 
@@ -68,11 +76,11 @@ executa
 cat timp <conditie>
 
 citeste n
-cnt ← 0
+cnt <- 0
 executa
-    cnt ← cnt + 1
-    n ← [n/10]
-cat timp n ≠ 0
+    cnt <- cnt + 1
+    n <- [n/10]
+cat timp n != 0
 scrie cnt
 
 // __________________________________________
@@ -82,10 +90,10 @@ repeta
 pana cand <conditie>
 
 citeste n
-cnt ← 0
+cnt <- 0
 repeta
-    cnt ← cnt + 1
-    n ← [n/10]
+    cnt <- cnt + 1
+    n <- [n/10]
 pana cand n = 0
 scrie cnt
 
