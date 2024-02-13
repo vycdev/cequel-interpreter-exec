@@ -33,7 +33,7 @@ namespace Interpreter_exec
                 Environment.Exit(1);
             }
 
-            if (!File.Exists(flags.OutputFile))
+            if (!string.IsNullOrEmpty(flags.OutputFile) && !File.Exists(flags.OutputFile))
                 File.Create(flags.OutputFile);
 
             // Read input file
@@ -44,10 +44,11 @@ namespace Interpreter_exec
             // Tokenize 
             Tokenizer tokenizer = new(code);
 
-            foreach (Token token in tokenizer.Tokens)
-            {
-                Console.WriteLine(token.Type + " " + token.Value);
-            }
+            if(flags.Debug)
+                foreach (Token token in tokenizer.Tokens)
+                {
+                    Console.WriteLine(token.Type + " " + token.Value);
+                }
 
         }
     }

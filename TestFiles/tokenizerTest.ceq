@@ -1,0 +1,92 @@
+﻿+, -, *, /, 
+[a/b] // (rezultat intreg), 
+a%b // (restul impartirii)
+
+==, !=, <, <=, >, >=, ! (unary), &&, ||
+
+() // operator de grupare operatii 
+
+citeste a, b, c
+
+scrie "a + b = ", a + b, "\n"
+
+a <- 5
+b <- a + 3
+
+// Se folosesc taburi pentru determinarea instructiunilor (editorul va avea inserat automat acele linii si patrate in functie de taburi) 
+
+// Structura alternativa
+
+daca <conditie> atunci
+    <instructiuni1>
+altfel
+    <instructiuni2>
+
+// sau
+
+daca <conditie> atunci
+    <instructiuni1>
+
+
+// Structuri repetitive 
+
+pentru <variabila> ← <expresie initiala>, <expresie finala> , <pas> executa
+    <instructiuni>
+
+
+// unde expresie initiala, expresie finala și pas sunt expresii cu rezultat (de regulă) întreg, iar pas poate fi 1 sau -1 și poate lipsi, caz în care se consideră că este 1.
+
+// variabila primește pe rând valori crescătoare (dacă pas = 1) sau descrescătoare (dacă pas = -1) începând de la expresie initiala până la expresie finala, și pentru fiecare valoare se execută secvența instructiuni.
+
+// Dacă pas = 1 și expresie initiala > expresie finala>, secvența instructiuni nu se va executa deloc. La fel se întâmplă când <pas = -1 și expresie initiala < expresie finala. În caz contrar numărul de pași este expresie initială - expresie finala + 1, dacă <pas = 1, respectiv expresie finală - expresie initiala + 1, dacă pas=-1.
+
+S ← 0; P ← 1
+pentru i←1,n executa
+    S ← S + i
+    P ← P * i
+
+scrie S, ' ' , P
+
+// ______________________________________
+
+cat timp <conditie> executa
+    <instructiuni>
+
+
+citeste n
+S ← 0
+cat timp n ≠ 0 executa
+    S ← S + n % 10
+    n ← [n/10]
+ 
+scrie S
+
+// ________________________________________
+
+executa
+    <instructiuni>
+cat timp <conditie>
+
+citeste n
+cnt ← 0
+executa
+    cnt ← cnt + 1
+    n ← [n/10]
+cat timp n ≠ 0
+scrie cnt
+
+// __________________________________________
+
+repeta
+    <instructiuni>
+pana cand <conditie>
+
+citeste n
+cnt ← 0
+repeta
+    cnt ← cnt + 1
+    n ← [n/10]
+pana cand n = 0
+scrie cnt
+
+
