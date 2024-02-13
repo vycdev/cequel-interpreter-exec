@@ -44,6 +44,11 @@ namespace Interpreter_exec
             // Tokenize 
             Tokenizer tokenizer = new(code);
 
+            foreach (Token token in tokenizer.Tokens)
+            {
+                Console.WriteLine(token.Type + " " + token.Value);
+            }
+
         }
     }
 }
