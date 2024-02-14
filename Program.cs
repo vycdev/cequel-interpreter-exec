@@ -53,7 +53,7 @@ namespace Interpreter_exec
                 {
                     if(token.Value.Length > 30)
                     {
-                        var lines = token.Value.SplitInParts(30);
+                        var lines = token.Value.ReplaceLineEndings("\\n").SplitInParts(30);
                         Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, lines.First()));
                         foreach (string line in lines.Skip(1))
                             Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "", line));
