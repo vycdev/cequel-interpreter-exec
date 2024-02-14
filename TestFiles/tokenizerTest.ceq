@@ -98,8 +98,8 @@ pana cand n = 0
 scrie cnt
 
 "acesta este un string" // valid
-"acesta este un alt string' // valid
-'acesta este inca un string" // valid 
+"acesta este un alt string' // invalid
+'acesta este inca un string" // invalid
 
 scrie pana cand
 
