@@ -17,7 +17,7 @@
     <None Update="help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestFiles\tokenizerTest.ceq">
+    <None Update="TestFiles\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
