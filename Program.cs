@@ -1,5 +1,6 @@
 ﻿using interpreter_exec.Utils;
 using Interpreter_exec.Utils;
+using Interpreter_lib.Parser;
 using Interpreter_lib.Tokenizer;
 
 namespace Interpreter_exec
@@ -63,6 +64,17 @@ namespace Interpreter_exec
                 }
             }
 
+            // Parse
+            Parser parser = new(tokenizer.Tokens);
+            parser.Parse();
+
+            // Print tree
+            if (flags.Debug)
+            {
+                Console.WriteLine("\nSyntax tree:");
+                foreach (Node node in parser.GetTree())
+                    PrintTree.Print(node);
+            }
         }
     }
 }
