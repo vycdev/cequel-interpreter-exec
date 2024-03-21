@@ -12,7 +12,7 @@ namespace interpreter_exec.Utils
     {
         public static void Print(Node tree, string indent = "", bool last = false)
         {
-            Console.Write(indent + "+- " + tree.GetRule().ToString() + " | (" + string.Join(",", tree.GetTokens().Select(a => "[" + a.Type.ToString() + "," + a.Value + "]")) + ")");
+            Console.Write("\n" + indent + "+- " + tree.GetRule().ToString() + " | (" + string.Join(",", tree.GetTokens().Select(a => "[" + a.Type.ToString() + "," + a.Value + "]")) + ")");
             indent += last ? "   " : "|  ";
 
             for (int i = 0; i < tree.GetNodes().Count; i++)
