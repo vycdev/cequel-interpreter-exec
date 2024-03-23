@@ -62,7 +62,9 @@ namespace Interpreter_exec
                     else
                         Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, token.Value));
                 }
+                Console.WriteLine("Number of tokens: " + tokenizer.Tokens.Count());
             }
+
 
             // Parse
             Parser parser = new(tokenizer.Tokens);
