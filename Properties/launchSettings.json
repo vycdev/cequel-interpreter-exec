@@ -8,7 +8,7 @@
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/tokenizerTest.ceq -v -d"
     },
-    "PaserTest1": {
+    "PaserTest": {
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/parserTest.ceq -v -d"
     }
