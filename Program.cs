@@ -75,8 +75,7 @@ namespace Interpreter_exec
             if (flags.Debug)
             {
                 Console.WriteLine("\nSyntax tree:");
-                foreach (Node node in parser.GetTree())
-                    PrintTree.Print(node);
+                PrintTree.Print(parser.GetTree());
             }
         }
     }
