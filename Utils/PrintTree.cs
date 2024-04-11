@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace interpreter_exec.Utils
@@ -10,15 +11,26 @@ namespace interpreter_exec.Utils
 
     public static class PrintTree
     {
-        public static void Print(Node tree, string indent = "", bool last = false)
+        public static void Print(ISyntaxNode node, string indent = "", bool last = false)
         {
-            Console.Write("\n" + indent + "+- " + tree.GetRule().ToString() + " | (" + string.Join(",", tree.GetTokens().Select(a => "[" + a.Type.ToString() + "," + a.Value + "]")) + ")");
+            var regex = new Regex(Regex.Escape(":"));
+            string name = "\u001b[39m";
+
+            if(node.GetType() == typeof(Node))
+                name += "\x1b[94m" + node.Print();
+            else
+                name += "\x1b[93m" + regex.Replace(node.Print(), ":\u001b[39m", 1);
+
+            name += "\u001b[39m";
+
+            Console.Write("\n" + indent + "+- " + name);
             indent += last ? "   " : "|  ";
 
-            for (int i = 0; i < tree.GetNodes().Count; i++)
-            {
-                Print(tree.GetNodes()[i], indent, i == tree.GetNodes().Count - 1);
-            }
+            if(node.GetType() == typeof(Node))
+                for (int i = 0; i < ((Node)node).GetSyntaxNodes().Count; i++)
+                {
+                    Print(((Node)node).GetSyntaxNodes()[i], indent, i == ((Node)node).GetSyntaxNodes().Count - 1);
+                }
         }
     }
 }
