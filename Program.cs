@@ -9,7 +9,6 @@ namespace Interpreter_exec
     {
         public static void Main(string[] args)
         {
-
             FlagsHelper flags = new(args);
             if (flags.Help)
             {
