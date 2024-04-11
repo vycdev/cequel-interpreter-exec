@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace interpreter_exec.Utils
 {
 
-    public static class PrintTree
+    public static class Printer
     {
         public static void Print(ISyntaxNode node, string indent = "", bool last = false)
         {
