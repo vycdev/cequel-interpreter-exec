@@ -11,7 +11,7 @@ namespace interpreter_exec.Utils
 
     public static class Printer
     {
-        public static void Print(ISyntaxNode node, string indent = "", bool last = false)
+        public static void PrintTree(ISyntaxNode node, string indent = "", bool last = false)
         {
             var regex = new Regex(Regex.Escape(":"));
             string name = "\u001b[39m";
@@ -29,7 +29,7 @@ namespace interpreter_exec.Utils
             if(node.GetType() == typeof(Node))
                 for (int i = 0; i < ((Node)node).GetSyntaxNodes().Count; i++)
                 {
-                    Print(((Node)node).GetSyntaxNodes()[i], indent, i == ((Node)node).GetSyntaxNodes().Count - 1);
+                    PrintTree(((Node)node).GetSyntaxNodes()[i], indent, i == ((Node)node).GetSyntaxNodes().Count - 1);
                 }
         }
     }

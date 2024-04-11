@@ -73,7 +73,7 @@ namespace Interpreter_exec
             if (flags.Debug)
             {
                 Console.WriteLine("\nSyntax tree:");
-                Printer.Print(parser.GetTree());
+                Printer.PrintTree(parser.GetTree());
             }
         }
     }
