@@ -48,21 +48,7 @@ namespace Interpreter_exec
 
             if (flags.Debug)
             {
-                Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "Type", "Value"));
-                Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------", "------------------------------"));
-                foreach (Token token in tokenizer.Tokens)
-                {
-                    if (token.Value.Length > 30)
-                    {
-                        var lines = token.Value.ReplaceLineEndings("\\n").SplitInParts(30);
-                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, lines.First()));
-                        foreach (string line in lines.Skip(1))
-                            Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "", line));
-                    }
-                    else
-                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, token.Value));
-                }
-                Console.WriteLine("Number of tokens: " + tokenizer.Tokens.Count());
+                Printer.PrintTokens(tokenizer.Tokens);
             }
 
             // Parse
