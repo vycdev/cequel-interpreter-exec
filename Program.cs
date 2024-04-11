@@ -16,7 +16,7 @@ namespace Interpreter_exec
                 StreamReader reader = new("help.txt");
                 string help = reader.ReadToEnd();
                 reader.Close();
-                Console.Write(help);    
+                Console.Write(help);
 
                 return;
             }
@@ -53,7 +53,7 @@ namespace Interpreter_exec
                 Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------", "------------------------------"));
                 foreach (Token token in tokenizer.Tokens)
                 {
-                    if(token.Value.Length > 30)
+                    if (token.Value.Length > 30)
                     {
                         var lines = token.Value.ReplaceLineEndings("\\n").SplitInParts(30);
                         Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, lines.First()));
@@ -65,7 +65,6 @@ namespace Interpreter_exec
                 }
                 Console.WriteLine("Number of tokens: " + tokenizer.Tokens.Count());
             }
-
 
             // Parse
             Parser parser = new(tokenizer.Tokens);
