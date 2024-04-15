@@ -13,3 +13,11 @@ a && b || +c
 a && b || --+-c
 a && b || !-+~c
 5 + "test"
+
+var = 5
+var2 <- 5
+var3 = 5 + 5 + "string"
+
+scrie 5
+scrie 5 + 5, a * b
+scrie var, var2, var3
