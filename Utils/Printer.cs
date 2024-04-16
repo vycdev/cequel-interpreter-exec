@@ -14,8 +14,8 @@ namespace interpreter_exec.Utils
     {
         public static void PrintTokens(List<Token> tokens)
         {
-            Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "Type", "Value"));
-            Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------", "------------------------------"));
+            Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "Type", "Value"));
+            Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------"));
             foreach (Token token in tokens)
             {
                 if (token.Value.Length > 30)
