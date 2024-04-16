@@ -26,4 +26,4 @@ scrie var, var2, var3
 // statement; tab eof
 			
 daca a == b atunci	
-	
+	daca b == c atunci
