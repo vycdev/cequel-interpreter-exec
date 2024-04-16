@@ -84,9 +84,12 @@ namespace Interpreter_exec
                     Console.WriteLine(token);
                 }
 
-                Console.WriteLine("Current token: ");
-                Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Type);
-                Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Value);
+                if(ex.Rule._currentTokenIndex < ex.Rule._tokens.Count)
+                {
+                    Console.WriteLine("Current token: ");
+                    Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Type);
+                    Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Value);
+                }
 
                 Console.WriteLine(ex.Message);
             }
