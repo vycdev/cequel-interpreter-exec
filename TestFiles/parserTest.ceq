@@ -25,16 +25,19 @@
 // statement; tab;
 // statement; tab eof
 	
-daca a == b atunci
+daca a == b atunci;;;;
 	scrie a
+	
+variabila = b
+scrie a, b, c
 
-// daca a == b atunci	
-// 	daca b == c atunci
-// 		scrie a
+daca a == b atunci	
+	daca b == c atunci
+		scrie a
 
-daca b == c atunci
-	scrie c
-altfel
-	scrie b
-	daca d == e atunci;;;;
-		scrie d
+// daca b == c atunci
+// 	scrie c
+// altfel
+// 	scrie b
+// 	daca d == e atunci;;;;
+// 		scrie d
