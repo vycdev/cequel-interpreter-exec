@@ -30,16 +30,29 @@ daca a == b atunci;;;;
 	
 variabila = b
 scrie a, b, c
-
-daca a == b atunci	
-	daca b == c atunci
-		scrie a
-	altfel
-		scrie b
-
 // daca b == c atunci
 // 	scrie c
 // altfel
 // 	scrie b
 // 	daca d == e atunci;;;;
 // 		scrie d
+
+daca a == b atunci
+	daca b == c atunci
+		scrie a
+	altfel
+		scrie b
+		scrie c
+		a = 5
+
+scrie a
+
+pentru a = 0, a < 10, a + 1 executa
+	scrie a
+
+pentru b = 1, b < 10 executa
+	scrie b
+	daca b == 5 atunci
+		scrie b
+
+scrie b
