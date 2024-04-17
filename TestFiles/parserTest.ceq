@@ -56,3 +56,20 @@ pentru b = 1, b < 10 executa
 		scrie b
 
 scrie b
+
+cat timp a < 10 executa
+	scrie a
+	a = a + 1
+
+executa 
+	scrie a
+	a = a + 1
+cat timp a < 10
+
+repeta 
+	scrie a
+	a = a + 1
+pana cand a > 10
+
+citeste a
+citeste a, b, c
