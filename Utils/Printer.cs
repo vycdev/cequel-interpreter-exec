@@ -14,19 +14,19 @@ namespace interpreter_exec.Utils
     {
         public static void PrintTokens(List<Token> tokens)
         {
-            Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "Type", "Value"));
-            Console.WriteLine(String.Format("|{0,-30}|{0,-30}|", "------------------------------"));
+            Console.WriteLine(String.Format("|{0,-30}|{1,-30}|{2,-10}|", "Type", "Value", "Line"));
+            Console.WriteLine(String.Format("|{0,-30}|{0,-30}|{1,-10}|", "------------------------------", "----------"));
             foreach (Token token in tokens)
             {
                 if (token.Value.Length > 30)
                 {
                     var lines = token.Value.ReplaceLineEndings("\\n").SplitInParts(30);
-                    Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, lines.First()));
+                    Console.WriteLine(String.Format("|{0,-30}|{1,-30}|{2,-10}|", token.Type, lines.First(), token.Line));
                     foreach (string line in lines.Skip(1))
-                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", "", line));
+                        Console.WriteLine(String.Format("|{0,-30}|{1,-30}|{2,-10}|", "", line, ""));
                 }
                 else
-                    Console.WriteLine(String.Format("|{0,-30}|{1,-30}|", token.Type, token.Value));
+                    Console.WriteLine(String.Format("|{0,-30}|{1,-30}|{2,-10}|", token.Type, token.Value, token.Line));
             }
             Console.WriteLine("Number of tokens: " + tokens.Count());
         }
