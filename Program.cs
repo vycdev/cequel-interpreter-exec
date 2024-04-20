@@ -2,6 +2,7 @@
 using Interpreter_exec.Utils;
 using Interpreter_lib.Parser;
 using Interpreter_lib.Tokenizer;
+using Interpreter_lib.Utils;
 
 namespace Interpreter_exec
 {
