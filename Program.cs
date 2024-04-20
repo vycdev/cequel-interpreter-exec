@@ -65,38 +65,9 @@ namespace Interpreter_exec
                     Printer.PrintTree(parser.GetTree());
                 }
             }
-            catch (InterpretingException ex)
-            {
-                // TODO: Make the error messages nicer and put them inside the ParsingException class
-                Console.WriteLine("\nParsing exception:");
-
-                if(ex.Rule == null)
-                {
-                    Console.WriteLine(ex.Message);
-                    return;
-                }
-
-                Console.WriteLine("Rule: ");    
-                Console.WriteLine(ex.Rule._rule);
-
-                Console.WriteLine("Expected tokens: ");
-                foreach (var token in ex.Rule._expectedTokens)
-                {
-                    Console.WriteLine(token);
-                }
-
-                if(ex.Rule._currentTokenIndex < ex.Rule._tokens.Count)
-                {
-                    Console.WriteLine("Current token: ");
-                    Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Type);
-                    Console.WriteLine(ex.Rule._tokens[ex.Rule._currentTokenIndex].Value);
-                }
-
-                Console.WriteLine(ex.Message);
-            }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("\n" + ex.Message);
             }
 
         }
