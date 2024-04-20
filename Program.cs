@@ -65,7 +65,7 @@ namespace Interpreter_exec
                     Printer.PrintTree(parser.GetTree());
                 }
             }
-            catch (ParsingException ex)
+            catch (InterpretingException ex)
             {
                 // TODO: Make the error messages nicer and put them inside the ParsingException class
                 Console.WriteLine("\nParsing exception:");
