@@ -33,13 +33,21 @@ namespace interpreter_exec.Utils
 
         public static void PrintTree(ISyntaxNode node, string indent = "", bool last = false)
         {
-            var regex = new Regex(Regex.Escape(":"));
+            var regexColon = new Regex(Regex.Escape(":"));
+            var regexSeparator = new Regex(Regex.Escape("|"));
             string name = "\u001b[39m";
 
             if(node.GetType() == typeof(Node))
+            {
                 name += "\x1b[94m" + node.Print();
+                name = regexSeparator.Replace(name, "\u001b[39m|\u001b[92m", 1);
+                name = regexColon.Replace(name, ":\u001b[39m");
+            }
             else
-                name += "\x1b[93m" + regex.Replace(node.Print(), ":\u001b[39m", 1);
+            {
+                name += "\x1b[93m" + regexColon.Replace(node.Print(), ":\u001b[39m");
+                name = regexSeparator.Replace(name, "\u001b[39m|\u001b[92m", 1);
+            }
 
             name += "\u001b[39m";
 
