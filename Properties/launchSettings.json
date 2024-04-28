@@ -18,7 +18,7 @@
     },
     "Fibonacci Test": {
       "commandName": "Project",
-      "commandLineArgs": "-i ./TestFiles/fibonacci.ceq -v"
+      "commandLineArgs": "-i ./TestFiles/fibonacci.ceq -v -d"
     }
   }
 }
