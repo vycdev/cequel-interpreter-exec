@@ -1,16 +1,21 @@
 ﻿// Print test
 scrie "Hello, World!"
 
-// Expression test
-print 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
-
 // Variable test
+scrie "Variable test."
 a <- 5
 b <- 3
 
 scrie a + b
 
+// Expression test
+scrie "Expression test."
+
+a <- 5 + 3 * 7 / (12 + 2)
+scrie 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
+
 // If test
+scrie "If test."
 a <- 5 + 5 - 3
 
 scrie a
@@ -22,3 +27,54 @@ altfel
 
 scrie a
 
+// While test
+scrie "While test."
+a <- 0
+
+cat timp a < 10 executa
+	a <- a + 1
+	scrie a
+
+// Do while test
+scrie "Do while test."
+
+a <- 0
+
+executa
+	scrie a
+	a <- a + 1
+cat timp a < 10 
+
+a <- 0
+
+executa
+	scrie a
+	a <- a + 1
+cat timp a > 10
+
+// Reapeat until test
+scrie "Repeat until test."
+
+a <- 0
+
+repeta 
+	scrie a
+	a <- a + 1
+pana cand a < 10
+
+a <- 0
+
+repeta 
+	scrie a
+	a <- a + 1
+pana cand a > 10
+
+// For test
+
+scrie "For test."
+
+pentru b <- 0, 10 executa
+	scrie b
+
+pentru b <- 10, 0, -1 executa
+	scrie b
