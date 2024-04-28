@@ -15,6 +15,10 @@
     "Evaluator Test": {
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/evaluatorTest.ceq -v -d"
+    },
+    "Fibonacci Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/fibonacci.ceq -v"
     }
   }
 }

@@ -1,0 +1,13 @@
+﻿n = 101
+
+b = 1
+a = 0
+c = 0
+i = 0
+
+pentru i = 2, n executa
+	c = a + b
+	a = b
+	b = c
+
+scrie n - 1, "th number in the fibonacci sequence is: ", b
