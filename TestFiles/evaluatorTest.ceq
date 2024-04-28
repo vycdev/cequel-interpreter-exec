@@ -1,5 +1,24 @@
-﻿
+﻿// Print test
+scrie "Hello, World!"
 
+// Expression test
+print 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
+
+// Variable test
+a <- 5
+b <- 3
+
+scrie a + b
+
+// If test
 a <- 5 + 5 - 3
 
 scrie a
+
+daca a == 7 atunci
+	a <- a + 1
+altfel 
+	a <- a - 1
+
+scrie a
+
