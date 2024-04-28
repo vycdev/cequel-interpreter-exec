@@ -73,8 +73,12 @@ pana cand a > 10
 
 scrie "For test."
 
+acc <- ""
+
 pentru b <- 0, 10 executa
-	scrie b
+	acc <- acc + b + " "
 
 pentru b <- 10, 0, -1 executa
-	scrie b
+	acc <- acc + b + " "
+
+scrie acc
