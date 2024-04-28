@@ -1,73 +1,83 @@
 ﻿// Print test
 scrie "Hello, World!"
+scrie ""
 
 // Variable test
 scrie "Variable test."
 a <- 5
 b <- 3
 
-scrie a + b
+scrie "a + b = ", a + b
 
 // Expression test
 scrie "Expression test."
 
 a <- 5 + 3 * 7 / (12 + 2)
-scrie 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
+scrie "Result = ", 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
 
 // If test
 scrie "If test."
 a <- 5 + 5 - 3
 
-scrie a
+scrie "a = ", a
 
 daca a == 7 atunci
 	a <- a + 1
 altfel 
 	a <- a - 1
 
-scrie a
+scrie "a = ", a
 
 // While test
 scrie "While test."
 a <- 0
+acc <- ""
 
 cat timp a < 10 executa
 	a <- a + 1
-	scrie a
+	acc <- acc + a + " "
+
+scrie acc
 
 // Do while test
 scrie "Do while test."
 
 a <- 0
+acc <- ""
 
 executa
-	scrie a
 	a <- a + 1
+	acc <- acc + a + " "
 cat timp a < 10 
 
 a <- 0
 
 executa
-	scrie a
 	a <- a + 1
+	acc <- acc + a + " "
 cat timp a > 10
+
+scrie acc
 
 // Reapeat until test
 scrie "Repeat until test."
 
 a <- 0
+acc <- ""
 
 repeta 
-	scrie a
 	a <- a + 1
+	acc <- acc + a + " "
 pana cand a < 10
 
 a <- 0
 
 repeta 
-	scrie a
 	a <- a + 1
-pana cand a > 10
+	acc <- acc + a + " "
+pana cand a >= 10
+
+scrie acc
 
 // For test
 
@@ -78,7 +88,7 @@ acc <- ""
 pentru b <- 0, 10 executa
 	acc <- acc + b + " "
 
-pentru b <- 10, 0, -1 executa
+pentru b <- 10, -1, -1 executa
 	acc <- acc + b + " "
 
 scrie acc
