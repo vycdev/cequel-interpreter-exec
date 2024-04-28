@@ -12,6 +12,10 @@ namespace Interpreter_exec
         public static void Main(string[] args)
         {
             FlagsHelper flags = new(args);
+            DateTime? executionStart = null;
+            DateTime? executionEnd = null;
+            TimeSpan? totalExecutionTime = null; 
+
             if (flags.Help)
             {
                 StreamReader reader = new("help.txt");
@@ -46,18 +50,33 @@ namespace Interpreter_exec
             inputReader.Close();
 
             // Tokenize 
+            executionStart = DateTime.Now;
+
             Tokenizer tokenizer = new(code, flags.Language);
+            
+            executionEnd = DateTime.Now;
 
             if (flags.Debug)
             {
                 Printer.PrintTokens(tokenizer.Tokens);
+
+            }
+            
+            if (flags.Verbose)
+            {
+                Console.WriteLine("\u001b[39m\u001b[94mTokenization time: \u001b[39m" + (executionEnd - executionStart).Value.ToString("c"));
+                totalExecutionTime = (executionEnd - executionStart).Value;
             }
 
             try
             {
                 // Parse
+                executionStart = DateTime.Now;
+                
                 Parser parser = new(tokenizer.Tokens);
                 parser.Parse();
+
+                executionEnd = DateTime.Now;
 
                 // Print tree
                 if (flags.Debug)
@@ -67,9 +86,28 @@ namespace Interpreter_exec
                     Console.WriteLine("\n");
                 }
 
+                if (flags.Verbose)
+                {
+                    Console.WriteLine("\u001b[39m\u001b[94mParsing time: \u001b[39m" + (executionEnd - executionStart).Value.ToString("c"));
+                    totalExecutionTime += (executionEnd - executionStart).Value;
+                }
+
                 // Execute
+                executionStart = DateTime.Now;
+
                 Evaluator evaluator = new();
                 evaluator.Evaluate(parser.GetTree());
+                
+                executionEnd = DateTime.Now;
+
+                if (flags.Verbose)
+                {
+                    Console.WriteLine("\n\n\u001b[39m\u001b[94mExecution time: \u001b[39m" + (executionEnd - executionStart).Value.ToString("c"));
+                    totalExecutionTime += (executionEnd - executionStart).Value;
+                    Console.WriteLine("\u001b[39m\u001b[94mTotal execution time: \u001b[39m" + totalExecutionTime.Value.ToString("c"));
+                }
+
+
             }
             catch (Exception ex)
             {

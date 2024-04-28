@@ -28,7 +28,7 @@ namespace interpreter_exec.Utils
                 else
                     Console.WriteLine(String.Format("|{0,-30}|{1,-30}|{2,-10}|", token.Type, token.Value, token.Line));
             }
-            Console.WriteLine("Number of tokens: " + tokens.Count());
+            Console.WriteLine("\u001b[39m\u001b[94mNumber of tokens: \u001b[39m" + tokens.Count());
         }
 
         public static void PrintTree(ISyntaxNode node, string indent = "", bool last = false)
