@@ -1,4 +1,4 @@
-﻿n = 101
+﻿n = 10
 
 b = 1
 a = 0
@@ -11,3 +11,4 @@ pentru i = 2, n executa
 	b = c
 
 scrie n - 1, "th number in the fibonacci sequence is: ", b
+

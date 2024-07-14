@@ -3,7 +3,6 @@ using Interpreter_exec.Utils;
 using Interpreter_lib.Evaluator;
 using Interpreter_lib.Parser;
 using Interpreter_lib.Tokenizer;
-using Interpreter_lib.Utils;
 
 namespace Interpreter_exec;
 
@@ -57,10 +56,7 @@ public class Program
         executionEnd = DateTime.Now;
 
         if (flags.Debug)
-        {
             Printer.PrintTokens(tokenizer.Tokens);
-
-        }
         
         if (flags.Verbose)
         {

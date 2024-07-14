@@ -1,0 +1,10 @@
+﻿a = 360 
+b = 195
+
+cat timp a != b executa
+	daca a > b atunci
+		a = a - b
+	altfel
+		b = b - a
+
+scrie a 

@@ -19,6 +19,14 @@
     "Fibonacci Test": {
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/fibonacci.ceq -v -d"
+    },
+    "Greatest Common Divider Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/gcd.ceq -v -d"
+    },
+    "Addition Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/additionTest.ceq -v -d"
     }
   }
 }
