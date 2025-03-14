@@ -1,7 +1,7 @@
 ﻿// 5 + 3 * 7 / (12 + a - [6 + 5 * (13 + 2)])
 // 4 ** 3 ** (5 + 4) ** 7 % 2 << 3
 // 4 >> ((5 < 4 >= 10 + 11) >> a == b)
-// b != c || variable && variable || (a ^ b & c | d)
+// b != c || variable && variable || (a /^ /b & c | d)
 // !a
 // ~b
 // -c
@@ -71,7 +71,7 @@ repeta
 	a = a + 1
 pana cand a > 10
 
-test
-
 citeste a
 citeste a, b, c
+
+b = "test"

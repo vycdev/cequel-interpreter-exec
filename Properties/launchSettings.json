@@ -1,16 +1,32 @@
 {
   "profiles": {
-    "interpreter-exec": {
+    "Start": {
       "commandName": "Project",
       "commandLineArgs": "-h"
     },
-    "TokenizerTest": {
+    "Tokenizer Test": {
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/tokenizerTest.ceq -v -d"
     },
-    "PaserTest": {
+    "Paser Test": {
       "commandName": "Project",
       "commandLineArgs": "-i ./TestFiles/parserTest.ceq -v -d"
+    },
+    "Evaluator Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/evaluatorTest.ceq -v -d"
+    },
+    "Fibonacci Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/fibonacci.ceq -v -d"
+    },
+    "Greatest Common Divider Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/gcd.ceq -v -d"
+    },
+    "Addition Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ./TestFiles/additionTest.ceq -v -d"
     }
   }
 }
